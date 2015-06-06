@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Yius</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yius.each do |yiu| %>
+      <tr>
+        <td><%= yiu.name %></td>
+        <td><%= yiu.description %></td>
+        <td><%= yiu.picture %></td>
+        <td><%= link_to 'Show', yiu %></td>
+        <td><%= link_to 'Edit', edit_yiu_path(yiu) %></td>
+        <td><%= link_to 'Destroy', yiu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yiu', new_yiu_path %>
